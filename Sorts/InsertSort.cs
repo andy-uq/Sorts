@@ -38,6 +38,9 @@ namespace Sorts
 			{
 				Sort(data, i);
 			}
+
+			ShowArray(data);
+			Assert.That(data, Is.Ordered);
 		}
 
 		private void Sort(int[] data, int offset)
