@@ -30,7 +30,7 @@ namespace Sorts
 
 		protected void Swap(int[] data, int a, int b)
 		{
-			ShowArray(data);
+			ShowArray(data, prefix:"X: ");
 
 			var tmp = data[a];
 			Assign(data, a, data[b]);
@@ -38,9 +38,12 @@ namespace Sorts
 			_swaps++;
 		}
 
-		protected static void ShowArray(IEnumerable<int> data)
+		protected static void ShowArray(IEnumerable<int> data, string prefix = "")
 		{
-			Console.WriteLine(DataString(data));
+			if (string.IsNullOrEmpty(prefix))
+				Console.WriteLine(DataString(data));
+			
+			Console.WriteLine(prefix + DataString(data));
 		}
 
 		protected static string DataString(IEnumerable<int> data)
